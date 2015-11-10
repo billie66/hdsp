@@ -1,8 +1,13 @@
+const { Link } = ReactRouter;
+
 App = React.createClass({
   render() {
     return (
       <div>
-        This is App.jsx
+        <Link to="/"> HOME </Link>
+        <Link to="/blog"> BLOG</Link>
+        <Link to="/about"> ABOUT </Link>
+        {this.props.children}
       </div>
     );
   }
