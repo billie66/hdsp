@@ -1,7 +1,7 @@
 About = React.createClass({
   render() {
     return (
-      <div>
+      <div style={{ marginTop: '84px' }}>
         <p>This is about page</p>
       </div>
     );
