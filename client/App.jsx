@@ -1,12 +1,26 @@
-const { Link } = ReactRouter;
+const { Tab, Tabs } = mui;
 
 App = React.createClass({
   render() {
     return (
       <div>
-        <Link to="/"> HOME </Link>
-        <Link to="/blog"> BLOG</Link>
-        <Link to="/about"> ABOUT </Link>
+        <Tabs>
+          <Tab
+            value='1'
+            label='Home'
+            route='/home'
+           />
+          <Tab
+            value='2'
+            label='Blog'
+            route='/blog'
+           />
+          <Tab
+            value='3'
+            label='About'
+            route='/about'
+            />
+        </Tabs>
         {this.props.children}
       </div>
     );
