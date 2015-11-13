@@ -6,6 +6,11 @@ App = React.createClass({
       tabIndex: this._getSelectedIndex()
     });
   },
+  componentWillReceiveProps(nextProps, nextContext) {
+    this.setState({
+      tabIndex: this._getSelectedIndex()
+    });
+  },
   render() {
     let styles = {
       root: {
