@@ -1,26 +1,32 @@
 Post = React.createClass({
   getInitialState() {
     return {
-      posts: [
-        "The first post",
-        "The second post"
-      ]
+      post: ''
     };
   },
 
-  getPostId() {
-    return this.props.params.postName.split('-')[0];
+  componentWillMount() {
+    let that = this;
+    let postName = this.props.params.postName;
+
+    Meteor.call('/blog/getPost', postName, function(err, res){
+      if (err) {
+        console.log(`The post ${postName} does not exist!`);
+        return;
+      }
+
+      that.setState({ post: res });
+    });
   },
 
   render() {
     let style = {
       paddingTop: '100px',
     };
-    let postId = parseInt(this.getPostId());
 
     return (
       <div style={style}>
-        { this.state.posts[postId - 1] }
+        { this.state.post }
       </div>
     );
   }
