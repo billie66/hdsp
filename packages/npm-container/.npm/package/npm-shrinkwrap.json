@@ -155,7 +155,7 @@
       }
     },
     "history": {
-      "version": "1.13.0",
+      "version": "1.13.1",
       "dependencies": {
         "deep-equal": {
           "version": "1.0.1"
@@ -190,6 +190,9 @@
           }
         }
       }
+    },
+    "marked": {
+      "version": "0.3.5"
     },
     "material-ui": {
       "version": "0.13.1"

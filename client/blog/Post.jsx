@@ -20,13 +20,10 @@ Post = React.createClass({
   },
 
   render() {
-    let style = {
-      paddingTop: '100px',
-    };
-
+    let html = marked(this.state.post, {sanitize: true});
     return (
-      <div style={style}>
-        { this.state.post }
+      <div className="post-page">
+        <span className="post-content" dangerouslySetInnerHTML={{__html: html}} />
       </div>
     );
   }
