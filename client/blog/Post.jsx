@@ -20,7 +20,13 @@ Post = React.createClass({
   },
 
   render() {
+    marked.setOptions({
+      highlight: function (code) {
+        return hljs.highlightAuto(code).value;
+      }
+    });
     let html = marked(this.state.post, {sanitize: true});
+
     return (
       <div className="post-page">
         <span className="post-content" dangerouslySetInnerHTML={{__html: html}} />
