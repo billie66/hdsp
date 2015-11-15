@@ -1,6 +1,7 @@
 Post = React.createClass({
   getInitialState() {
     return {
+      metaData: {},
       post: ''
     };
   },
@@ -14,8 +15,10 @@ Post = React.createClass({
         console.log(`The post ${postName} does not exist!`);
         return;
       }
-
-      that.setState({ post: res });
+      that.setState({
+        metaData: res.metaData,
+        post: res.postContent
+      });
     });
   },
 
@@ -29,6 +32,7 @@ Post = React.createClass({
 
     return (
       <div className="post-page">
+        <PostHero metaData={this.state.metaData}/>
         <span className="post-content" dangerouslySetInnerHTML={{__html: html}} />
       </div>
     );
