@@ -1,4 +1,6 @@
 Post = React.createClass({
+  mixins: [ReactMeteorData],
+
   getInitialState() {
     return {
       metaData: {},
@@ -8,6 +10,16 @@ Post = React.createClass({
 
   getPostId() {
     return this.props.params.postName.split('-')[0];
+  },
+
+  getMeteorData() {
+    const postId = parseInt(this.getPostId());
+    // subscribe to the comments
+    Meteor.subscribe("comments", postId);
+
+    return {
+      comments: Comments.find({}, {sort: {createdAt: 1}}).fetch(),
+    }
   },
 
   componentWillMount() {
@@ -38,7 +50,7 @@ Post = React.createClass({
       <div className="post-page">
         <PostHero metaData={this.state.metaData}/>
         <span className="post-content" dangerouslySetInnerHTML={{__html: html}} />
-        <CommentBox postId={postId} />
+        <CommentBox comments={this.data.comments} postId={postId} />
       </div>
     );
   }
