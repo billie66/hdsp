@@ -19,7 +19,7 @@ BlogList = React.createClass({
 
 
     return (
-      <div className="blog-list">
+      <div className={this.props.className}>
         { blogItems }
       </div>
     );

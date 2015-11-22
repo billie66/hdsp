@@ -1,3 +1,4 @@
+const { Styles, CircularProgress } = mui;
 Blog = React.createClass({
   getInitialState(){
     return {
@@ -16,8 +17,20 @@ Blog = React.createClass({
       that.setState({ posts: JSON.parse(res) });
     });
   },
+
+  componentDidMount() {
+    $(".loader").delay(600).fadeOut('slow', function() {
+      $(".blog-list").fadeIn('slow');
+    });
+  },
+
   render() {
     let styles = {
+      root: {
+        paddingTop: '64px',
+        backgroundColor: '#fafafa',
+        minHeight: '50em'
+      },
       hero: {
         backgroundColor: '#00bcd4',
         textAlign: 'center',
@@ -30,19 +43,30 @@ Blog = React.createClass({
         color: '#fff',
         marginBottom: '20px',
         lineHeight: 1.1
+      },
+      circle: {
+        margin: '0 auto',
+        paddingTop: '100px',
+        display: 'block'
       }
     };
+
     return (
-      <div style={{ marginTop: '64px' }}>
+      <div style={styles.root}>
         <div style={styles.hero}>
           <div style={styles.title}>BLOG</div>
           <SearchBar
             inputText={this.state.inputText}
             onUserInput={this._handleInputChange} />
         </div>
+        <CircularProgress
+          mode="indeterminate"
+          className="loader"
+          style={styles.circle} />
         <BlogList
           inputText={this.state.inputText}
-          posts={this.state.posts}/>
+          posts={this.state.posts}
+          className="blog-list" />
       </div>
     );
   },
