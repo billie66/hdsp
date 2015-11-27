@@ -31,6 +31,9 @@ PostHero = React.createClass({
       <div style={styles.root}>
         <div style={styles.title}>{title}</div>
         <div style={styles.date}>{date}</div>
+        <Video
+          src="http://video-js.zencoder.com/oceans-clip.mp4"
+          poster="http://video-js.zencoder.com/oceans-clip.png"/>
       </div>
     );
   }

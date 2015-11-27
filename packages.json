@@ -3,5 +3,6 @@
   "externalify": "0.1.0",
   "react-router": "1.0.0",
   "marked": "0.3.5",
-  "highlight.js": "8.9.1"
+  "highlight.js": "8.9.1",
+  "video.js": "5.2.1"
 }
