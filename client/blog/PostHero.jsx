@@ -24,7 +24,7 @@ PostHero = React.createClass({
     let title, date;
     if(!_.isEmpty(meta)) {
       title = meta.title;
-      date = meta.date;
+      date = meta.created_at;
     }
 
     return (

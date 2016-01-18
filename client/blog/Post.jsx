@@ -9,7 +9,7 @@ Post = React.createClass({
   },
 
   getPostId() {
-    return this.props.params.postName.split('-')[0];
+    return this.props.params.name.split('-')[0];
   },
 
   getMeteorData() {
@@ -24,7 +24,7 @@ Post = React.createClass({
 
   componentWillMount() {
     let that = this;
-    let postName = this.props.params.postName;
+    let postName = this.props.params.name;
 
     Meteor.call('/blog/getPost', postName, function(err, res){
       if (err) {

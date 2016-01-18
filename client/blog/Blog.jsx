@@ -19,7 +19,7 @@ Blog = React.createClass({
   },
 
   componentDidMount() {
-    $(".loader").delay(600).fadeOut('slow', function() {
+    $(".loader").delay(1000).fadeOut('slow', function() {
       $(".blog-list").fadeIn('slow');
     });
   },

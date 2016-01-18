@@ -8,10 +8,10 @@ BlogList = React.createClass({
     .map((post) => {
       return (
         <div className="item clearfix" key={post.id}>
-          <Link to={`/blog/${post.post_name}`}>
+          <Link to={`/blog/${post.name}`}>
             <div className="icon">{post.id}</div>
             <div className="title">{post.title}</div>
-            <div className="date">{post.date}</div>
+            <div className="date">{post.created_at}</div>
           </Link>
         </div>
       );
