@@ -7,13 +7,13 @@ BlogList = React.createClass({
     })
     .map((post) => {
       return (
-        <div className="item clearfix" key={post.id}>
-          <Link to={`/blog/${post.name}`}>
-            <div className="icon">{post.id}</div>
+        <Link to={`/blog/${post.name}`} className="item" key={post.id}>
+          <div className="left">{post.id}</div>
+          <div className="right">
             <div className="title">{post.title}</div>
             <div className="date">{post.created_at}</div>
-          </Link>
-        </div>
+          </div>
+        </Link>
       );
     });
 

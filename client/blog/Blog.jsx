@@ -66,7 +66,7 @@ Blog = React.createClass({
         <BlogList
           inputText={this.state.inputText}
           posts={this.state.posts}
-          className="blog-list" />
+          className="blog-list container" />
       </div>
     );
   },
