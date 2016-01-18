@@ -65,7 +65,7 @@ Blog = React.createClass({
           style={styles.circle} />
         <BlogList
           inputText={this.state.inputText}
-          posts={this.state.posts}
+          posts={this.state.posts.reverse()}
           className="blog-list container" />
       </div>
     );
