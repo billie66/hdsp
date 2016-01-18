@@ -50,11 +50,6 @@ App = React.createClass({
 
         {this.props.children}
 
-        <div style={styles.footer}>
-          <p style={styles.p}>
-            The beautiful attracts the beautiful
-          </p>
-        </div>
       </div>
     );
   },

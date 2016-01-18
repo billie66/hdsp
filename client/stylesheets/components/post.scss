@@ -1,6 +1,8 @@
 .post-page {
   width: 100%;
-  margin: 0 auto;
+  .video-js {
+    margin: 0 auto;
+  }
 }
 .post-content {
   display: block;

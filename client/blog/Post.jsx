@@ -49,8 +49,8 @@ Post = React.createClass({
     return (
       <div className="post-page">
         <PostHero metaData={this.state.metaData}/>
+        <Video src="http://7xn2cy.com1.z0.glb.clouddn.com/online-user.mp4" />
         <span className="post-content" dangerouslySetInnerHTML={{__html: html}} />
-        <CommentBox comments={this.data.comments} postId={postId} />
       </div>
     );
   }
