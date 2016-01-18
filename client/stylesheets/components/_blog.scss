@@ -1,7 +1,6 @@
 .blog-list {
   display: none;
   min-height: 30em;
-  min-width: 22em;
   padding-bottom: 3em;
   .item {
     width: 100%;
@@ -20,7 +19,7 @@
     .left {
       display: table-cell;
       vertical-align: middle;
-      width: 3.5em;
+      width: 10%;
       background-color: #00bcd4;
       text-align: center;
       color: #fff;
