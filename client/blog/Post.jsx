@@ -48,9 +48,9 @@ Post = React.createClass({
     let postId = parseInt(this.getPostId());
     return (
       <div className="post-page">
-        <PostHero metaData={this.state.metaData}/>
+        <PostHero metaData={this.state.metaData} />
         <Video src="http://7xn2cy.com1.z0.glb.clouddn.com/online-user.mp4" />
-        <span className="post-content" dangerouslySetInnerHTML={{__html: html}} />
+        <span className="post-content container" dangerouslySetInnerHTML={{__html: html}} />
       </div>
     );
   }

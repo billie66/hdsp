@@ -3,12 +3,12 @@ Video = React.createClass({
     return {
       poster: null,
       src: null,
-      width: 640,
-      height: 264,
       className: 'video-js vjs-default-skin vjs-big-play-centered',
       controls: true,
       autoplay: false,
       preload: 'auto',
+      fluid: true,
+      aspectRatio: '16:9',
     };
   },
 
@@ -45,14 +45,13 @@ Video = React.createClass({
 
     this.video = document.createElement('video');
     this.video.src = this.props.src;
-    this.video.width = this.props.width;
-    this.video.height = this.props.height;
     this.video.className = this.props.className;
+
     node.appendChild(this.video);
     videojs(this.video, this.props);
   },
 
   render() {
-      return <div ref="videoplayer" />;
+    return <div ref="videoplayer" className="container" />;
   }
 });

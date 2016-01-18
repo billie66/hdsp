@@ -22,5 +22,5 @@ Meteor.startup(function() {
     <Router history={createHistory()}>
       {Routes}
     </Router>
-  ), document.getElementById("container"));
+  ), document.getElementById("app-container"));
 });
