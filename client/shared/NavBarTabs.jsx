@@ -22,7 +22,7 @@ NavBarTabs = React.createClass({
         color: '#727272'
       },
       inkBar: {
-        backgroundColor: "#00bcd4",
+        backgroundColor: "#ff4081",
         height: '4px',
         marginTop: '-4px'
       }

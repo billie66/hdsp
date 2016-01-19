@@ -19,25 +19,7 @@ App = React.createClass({
     });
   },
 
-  getStyles() {
-    return {
-      footer: {
-        padding: '72px 24px',
-        backgroundColor: '#212121',
-        textAlign: 'center'
-      },
-      p: {
-        margin: '0 auto',
-        padding: 0,
-        color: 'rgba(255, 255, 255, 0.54)',
-        fontSize: '1.5em',
-        maxWidth: 500
-      }
-    };
-  },
-
   render() {
-    let styles = this.getStyles();
     return (
       <div>
         { this.state.renderTabs ? (
@@ -50,11 +32,6 @@ App = React.createClass({
 
         {this.props.children}
 
-        <div style={styles.footer}>
-          <p style={styles.p}>
-            The beautiful attracts the beautiful
-          </p>
-        </div>
       </div>
     );
   },

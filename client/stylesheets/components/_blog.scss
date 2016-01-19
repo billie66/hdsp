@@ -1,7 +1,6 @@
 .blog-list {
   display: none;
   min-height: 30em;
-  padding-bottom: 3em;
   .item {
     width: 100%;
     display: table;
@@ -19,16 +18,19 @@
     .left {
       display: table-cell;
       vertical-align: middle;
-      width: 10%;
+      width: 12%;
       background-color: #00bcd4;
       text-align: center;
       color: #fff;
-      font-size: 1em;
+      font-size: 1.2em;
       font-weight: 700;
     }
     .right {
       display: table-cell;
       padding: 15px;
+      .title {
+        word-break: break-word;
+      }
       .date {
         font-size: .8em;
         opacity: .8;

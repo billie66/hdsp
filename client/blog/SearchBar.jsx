@@ -15,6 +15,10 @@ SearchBar = React.createClass({
         display: 'inline-block',
         position: 'relative',
         marginBottom: '-12px'
+      },
+      textField: {
+        width: '80%',
+        maxWidth: '400px'
       }
     };
   },

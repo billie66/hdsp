@@ -8,12 +8,8 @@ Post = React.createClass({
     };
   },
 
-  getPostId() {
-    return this.props.params.name.split('-')[0];
-  },
-
   getMeteorData() {
-    const postId = parseInt(this.getPostId());
+    const postId = parseInt(this.props.params.id);
     // subscribe to the comments
     Meteor.subscribe("comments", postId);
 
@@ -24,11 +20,11 @@ Post = React.createClass({
 
   componentWillMount() {
     let that = this;
-    let postName = this.props.params.name;
+    let postId = this.props.params.id;
 
-    Meteor.call('/blog/getPost', postName, function(err, res){
+    Meteor.call('/blog/getPost', postId, function(err, res){
       if (err) {
-        console.log(`The post ${postName} does not exist!`);
+        console.log(`The post does not exist!`);
         return;
       }
       that.setState({
@@ -45,7 +41,7 @@ Post = React.createClass({
       }
     });
     let html = marked(this.state.post, {sanitize: true});
-    let postId = parseInt(this.getPostId());
+    let postId = parseInt(this.props.params.id);
     return (
       <div className="post-page">
         <PostHero metaData={this.state.metaData} />
@@ -54,5 +50,4 @@ Post = React.createClass({
       </div>
     );
   }
-
 });

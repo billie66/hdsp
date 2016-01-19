@@ -7,7 +7,7 @@ BlogList = React.createClass({
     })
     .map((post) => {
       return (
-        <Link to={`/blog/${post.name}`} className="item" key={post.id}>
+        <Link to={`/blog/${post.id}`} className="item" key={post.id}>
           <div className="left">{post.id}</div>
           <div className="right">
             <div className="title">{post.title}</div>

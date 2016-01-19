@@ -11,7 +11,7 @@ Blog = React.createClass({
 
     Meteor.call('/blog/getPost', "posts", function(err, res){
       if (err) {
-        console.log(`The post ${postName} does not exist!`);
+        console.log(`This file does not exist!`);
         return;
       }
       that.setState({ posts: JSON.parse(res) });
@@ -28,6 +28,7 @@ Blog = React.createClass({
     let styles = {
       root: {
         paddingTop: '64px',
+        paddingBottom: '64px',
         backgroundColor: '#fafafa',
         minHeight: '50em'
       },
@@ -35,8 +36,7 @@ Blog = React.createClass({
         backgroundColor: '#00bcd4',
         textAlign: 'center',
         paddingTop: '55px',
-        paddingBottom: '55px',
-        marginBottom: '30px'
+        paddingBottom: '55px'
       },
       title: {
         fontSize: '48px',

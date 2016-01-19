@@ -1,10 +1,10 @@
 Meteor.methods({
-  '/blog/getPost': function(postName) {
+  '/blog/getPost': function(postId) {
     var posts = Assets.getText('posts.json');
-    if ( postName == "posts" ) {
+    if ( postId == "posts" ) {
       return posts;
     } else {
-      var postId = parseInt(postName.split('-')[0]);
+      var postId = parseInt(postId);
       var metaData = JSON.parse(posts)[postId - 1];
       var postContent = Assets.getText('posts/' + postId + '.md');
       return {

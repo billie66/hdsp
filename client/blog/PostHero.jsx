@@ -10,9 +10,9 @@ PostHero = React.createClass({
         marginBottom: '30px'
       },
       title: {
-        fontSize: '48px',
+        fontSize: '40px',
         color: '#fff',
-        marginBottom: '7px',
+        marginBottom: '15px',
         lineHeight: 1.1
       },
       date: {
