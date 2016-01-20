@@ -4,9 +4,6 @@ const {
   IndexRoute
 } = ReactRouter;
 
-const { createHistory } = History;
-
-
 const Routes = (
   <Route path="/" component={App}>
     <Route path="about" component={About}/>
@@ -19,7 +16,7 @@ const Routes = (
 
 Meteor.startup(function() {
   ReactDOM.render((
-    <Router history={createHistory()}>
+    <Router history={browserHistory}>
       {Routes}
     </Router>
   ), document.getElementById("app-container"));

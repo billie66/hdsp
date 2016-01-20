@@ -1,8 +1,14 @@
 var injectTapEventPlugin = require("react-tap-event-plugin");
 injectTapEventPlugin();
+
 mui = require('material-ui');
-marked = require('marked');
-hljs = require("highlight.js");
+selectableEnhance = require('material-ui/lib/hoc/selectable-enhance');
+
 ReactRouter = require("react-router");
-History = require("history");
+browserHistory = require('react-router/lib/browserHistory');
+
+marked = require('marked');
+
+hljs = require("highlight.js");
+
 videojs = require('video.js');

@@ -27,7 +27,6 @@ Blog = React.createClass({
   render() {
     let styles = {
       root: {
-        paddingTop: '64px',
         paddingBottom: '64px',
         backgroundColor: '#fafafa',
         minHeight: '50em'

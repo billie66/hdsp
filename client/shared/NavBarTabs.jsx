@@ -1,58 +1,79 @@
-const { Paper, Tabs, Tab } = mui;
+const { Tabs, Tab, IconButton } = mui;
 
 NavBarTabs = React.createClass({
+  getInitialState() {
+    return {
+      tabIndex: ''
+    };
+  },
+
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
+
+  componentWillMount() {
+    this.setState({
+      tabIndex: this._getSelectedIndex(),
+    });
+  },
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      tabIndex: this._getSelectedIndex(),
+    });
+  },
+
+  _handleTabsChange(value) {
+    this.context.router.push(value);
+    this.setState({tabsIndex: this._getSelectedIndex()});
+  },
+
+  _getSelectedIndex() {
+    return this.context.router.isActive('/home') ? '/home' :
+      this.context.router.isActive('/blog') ? '/blog' :
+      this.context.router.isActive('/about') ? '/about' : '';
+  },
+
   render() {
     let styles = {
-      root: {
-        position: 'fixed',
-        height: 64,
-        top: 0,
-        right: 0,
-        zIndex: 4,
-        width: '100%'
-      },
       tabs: {
-        width: '300px',
+        width: '390px',
         position: 'absolute',
-        right: 60,
-        textTransform: 'uppercase'
+        right: '60px',
+        textTransform: 'uppercase',
       },
       tab: {
-        height: 64,
-        color: '#727272'
+        height: '64px',
+        color: '#fff',
       },
       inkBar: {
-        backgroundColor: "#ff4081",
         height: '4px',
-        marginTop: '-4px'
-      }
+        marginTop: '-4px',
+      },
     };
 
     return (
-      <Paper style={styles.root}>
+      <div className="app-header">
         <Tabs
           style={styles.tabs}
-          tabItemContainerStyle={{backgroundColor: '#fff'}}
+          tabItemContainerStyle={{backgroundColor: 'transparent'}}
           inkBarStyle={styles.inkBar}
-          value={this.props.tabIndex}
-          onChange={this.props.onHandleTabsChange}>
+          value={this.state.tabIndex}
+          onChange={this._handleTabsChange}>
           <Tab
-            style={styles.tab}
-            value='1'
             label='Home'
-            route='/home' />
+            value='/home'
+            style={styles.tab} />
           <Tab
-            style={styles.tab}
-            value='2'
             label='Blog'
-            route='/blog' />
+            value='/blog'
+            style={styles.tab} />
           <Tab
-            style={styles.tab}
-            value='3'
             label='About'
-            route='/about' />
+            value='/about'
+            style={styles.tab} />
         </Tabs>
-      </Paper>
+      </div>
     );
   }
 });

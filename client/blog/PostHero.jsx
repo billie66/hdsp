@@ -2,7 +2,6 @@ PostHero = React.createClass({
   render() {
     let styles = {
       root: {
-        marginTop: 64,
         backgroundColor: '#00bcd4',
         textAlign: 'center',
         paddingTop: '55px',
@@ -10,7 +9,7 @@ PostHero = React.createClass({
         marginBottom: '30px'
       },
       title: {
-        fontSize: '40px',
+        fontSize: '2em',
         color: '#fff',
         marginBottom: '15px',
         lineHeight: 1.1

@@ -1,12 +1,37 @@
-const { LeftNav } = mui;
+const { LeftNav, List, ListItem } = mui;
 
-let menuItems = [
-  { route: '/home', text: 'Home' },
-  { route: '/blog', text: 'Blog' },
-  { route: '/about', text: 'About' }
-];
+const SelectableList = selectableEnhance.SelectableContainerEnhance(List);
 
 AppLeftNav = React.createClass({
+  getInitialState() {
+    return {
+      open: false,
+      selectedIndex: ''
+    };
+  },
+
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
+
+  componentDidMount() {
+    this.setState({
+      selectedIndex: this._getSelectedIndex()
+    })
+  },
+
+  componentWillReceiveProps() {
+    this.setState({
+      selectedIndex: this._getSelectedIndex()
+    })
+  },
+
+  _getSelectedIndex() {
+    return this.context.router.isActive('/home') ? '/home' :
+      this.context.router.isActive('/blog') ? '/blog' :
+      this.context.router.isActive('/about') ? '/about' : '';
+  },
+
   render() {
     let styles = {
       header: {
@@ -18,48 +43,55 @@ AppLeftNav = React.createClass({
         backgroundColor: '#00bcd4',
         paddingLeft: '24px',
         paddingTop: '0px',
-        marginBottom: '8px'
+        marginBottom: '8px',
+      },
+      selectedList: {
+        color: '#ff4081',
+        backgroundColor: 'rgba(0, 0, 0, 0.03)',
       }
     };
 
-    let header = (
-      <div style={styles.header} onTouchTap={this._onHeaderClick}>
-        Modern Demo
-      </div>
-    );
-
     return (
-      <LeftNav
-        ref="leftNav"
-        docked={false}
-        isInitiallyOpen={false}
-        header={header}
-        menuItems={menuItems}
-        selectedIndex={this._getSelectedIndex()}
-        onChange={this._onLeftNavChange} />
+      <LeftNav open={this.state.open}
+               docked={false}
+               onRequestChange={open => this.setState({open})}>
+        <div style={styles.header}
+          onTouchTap={this.handleTouchTapHeader}>
+          S3
+        </div>
+        <SelectableList
+          selectedItemStyle={styles.selectedList}
+          valueLink={{
+            value: this.state.selectedIndex,
+            requestChange: this.handleUpdateSelectedIndex, }}>
+          <ListItem
+            value="/home"
+            primaryText="Home" />
+          <ListItem
+            value='/blog'
+            primaryText='Blog' />
+          <ListItem
+            value='/about'
+            primaryText='About' />
+        </SelectableList>
+      </LeftNav>
     );
   },
 
-  toggle() {
-    this.refs.leftNav.toggle();
+  handleToggle() {
+    this.setState({open: !this.state.open});
   },
 
-  _getSelectedIndex() {
-    let currentItem;
-
-    for (let i = menuItems.length - 1; i >= 0; i--) {
-      currentItem = menuItems[i];
-      if (currentItem.route && this.props.history.isActive(currentItem.route)) return i;
-    }
+  handleUpdateSelectedIndex(e, index) {
+    this.context.router.push(index);
+    this.setState({
+      open: false,
+      selectedIndex: index,
+    });
   },
 
-  _onLeftNavChange(e, key, payload) {
-    this.props.history.pushState(null, payload.route);
-  },
-
-  _onHeaderClick() {
-    this.props.history.pushState(null, '/');
-    this.refs.leftNav.close();
+  handleTouchTapHeader() {
+    this.context.router.push('/home');
+    this.setState({open: false});
   }
-
 });
