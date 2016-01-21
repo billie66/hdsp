@@ -42,10 +42,11 @@ Post = React.createClass({
     });
     let html = marked(this.state.post, {sanitize: true});
     let postId = parseInt(this.props.params.id);
+    let videoSource = `http://7xnm4l.com1.z0.glb.clouddn.com/${this.state.metaData.name}.mp4`
     return (
       <div className="post-page">
         <PostHero metaData={this.state.metaData} />
-        <Video src="http://7xn2cy.com1.z0.glb.clouddn.com/online-user.mp4" />
+        { this.state.metaData.name ? <Video src={videoSource} /> : '' }
         <span className="post-content container" dangerouslySetInnerHTML={{__html: html}} />
       </div>
     );

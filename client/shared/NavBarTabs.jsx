@@ -36,6 +36,11 @@ NavBarTabs = React.createClass({
 
   render() {
     let styles = {
+      header: {
+        backgroundColor: '#fff',
+        width: '100%',
+        height: '64px'
+      },
       tabs: {
         width: '390px',
         position: 'absolute',
@@ -44,7 +49,7 @@ NavBarTabs = React.createClass({
       },
       tab: {
         height: '64px',
-        color: '#fff',
+        color: '#727272',
       },
       inkBar: {
         height: '4px',
@@ -53,10 +58,10 @@ NavBarTabs = React.createClass({
     };
 
     return (
-      <div className="app-header">
+      <div className="app-header" style={styles.header}>
         <Tabs
           style={styles.tabs}
-          tabItemContainerStyle={{backgroundColor: 'transparent'}}
+          tabItemContainerStyle={{backgroundColor: '#fff'}}
           inkBarStyle={styles.inkBar}
           value={this.state.tabIndex}
           onChange={this._handleTabsChange}>
