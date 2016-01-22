@@ -36,11 +36,6 @@ NavBarTabs = React.createClass({
 
   render() {
     let styles = {
-      header: {
-        backgroundColor: '#fff',
-        width: '100%',
-        height: '64px'
-      },
       tabs: {
         width: '390px',
         position: 'absolute',
@@ -58,7 +53,7 @@ NavBarTabs = React.createClass({
     };
 
     return (
-      <div className="app-header" style={styles.header}>
+      <div className="app-header">
         <Tabs
           style={styles.tabs}
           tabItemContainerStyle={{backgroundColor: '#fff'}}

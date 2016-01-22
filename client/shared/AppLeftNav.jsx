@@ -57,7 +57,7 @@ AppLeftNav = React.createClass({
                onRequestChange={open => this.setState({open})}>
         <div style={styles.header}
           onTouchTap={this.handleTouchTapHeader}>
-          S3
+          好多视频网
         </div>
         <SelectableList
           selectedItemStyle={styles.selectedList}
