@@ -39,8 +39,7 @@ NavBarTabs = React.createClass({
       tabs: {
         width: '390px',
         position: 'absolute',
-        right: '60px',
-        textTransform: 'uppercase',
+        right: '60px'
       },
       tab: {
         height: '64px',
