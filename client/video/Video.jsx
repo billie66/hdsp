@@ -26,10 +26,6 @@ Video = React.createClass({
 
   render() {
     let styles = {
-      root: {
-        paddingBottom: '64px',
-        minHeight: '50em'
-      },
       hero: {
         backgroundColor: '#00bcd4',
         textAlign: 'center',
@@ -50,7 +46,7 @@ Video = React.createClass({
     };
 
     return (
-      <div style={styles.root}>
+      <div>
         <div style={styles.hero}>
           <div style={styles.title}>VIDEO</div>
           <SearchBar
