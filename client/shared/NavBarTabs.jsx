@@ -45,6 +45,7 @@ NavBarTabs = React.createClass({
       tab: {
         height: '64px',
         color: '#727272',
+        fontSize: '16px',
       },
       inkBar: {
         height: '4px',
@@ -61,15 +62,15 @@ NavBarTabs = React.createClass({
           value={this.state.tabIndex}
           onChange={this._handleTabsChange}>
           <Tab
-            label='Home'
+            label='首页'
             value='/home'
             style={styles.tab} />
           <Tab
-            label='Video'
+            label='视频'
             value='/video'
             style={styles.tab} />
           <Tab
-            label='About'
+            label='关于'
             value='/about'
             style={styles.tab} />
         </Tabs>

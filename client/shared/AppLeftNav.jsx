@@ -66,13 +66,13 @@ AppLeftNav = React.createClass({
             requestChange: this.handleUpdateSelectedIndex, }}>
           <ListItem
             value="/home"
-            primaryText="Home" />
+            primaryText="首页" />
           <ListItem
             value='/video'
-            primaryText='Video' />
+            primaryText='视频' />
           <ListItem
             value='/about'
-            primaryText='About' />
+            primaryText='关于' />
         </SelectableList>
       </LeftNav>
     );
