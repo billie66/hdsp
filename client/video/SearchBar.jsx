@@ -35,7 +35,7 @@ SearchBar = React.createClass({
     return (
       <div>
         <div style={styles.div}>
-          <SearchIcon style={styles.svg} />
+          <ActionSearch style={styles.svg} />
         </div>
         <TextField
           ref="searchInput"

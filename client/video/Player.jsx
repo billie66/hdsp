@@ -1,4 +1,4 @@
-Video = React.createClass({
+Player = React.createClass({
   getDefaultProps() {
     return {
       poster: null,

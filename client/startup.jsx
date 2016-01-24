@@ -7,8 +7,8 @@ const {
 const Routes = (
   <Route path="/" component={App}>
     <Route path="about" component={About}/>
-    <Route path="blog" component={Blog}/>
-    <Route path="/blog/:id" component={Post} />
+    <Route path="video" component={Video}/>
+    <Route path="/v/:id" component={Post} />
     <Route path="home" component={Home}/>
     <IndexRoute component={Home}/>
   </Route>

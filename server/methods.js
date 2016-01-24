@@ -1,5 +1,5 @@
 Meteor.methods({
-  '/blog/getPost': function(postId) {
+  '/video/getPost': function(postId) {
     var posts = Assets.getText('posts.json');
     if ( postId == "posts" ) {
       return posts;

@@ -28,7 +28,7 @@ AppLeftNav = React.createClass({
 
   _getSelectedIndex() {
     return this.context.router.isActive('/home') ? '/home' :
-      this.context.router.isActive('/blog') ? '/blog' :
+      this.context.router.isActive('/video') ? '/video' :
       this.context.router.isActive('/about') ? '/about' : '';
   },
 
@@ -68,8 +68,8 @@ AppLeftNav = React.createClass({
             value="/home"
             primaryText="Home" />
           <ListItem
-            value='/blog'
-            primaryText='Blog' />
+            value='/video'
+            primaryText='Video' />
           <ListItem
             value='/about'
             primaryText='About' />

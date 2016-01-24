@@ -1,13 +1,13 @@
 const { Link } = ReactRouter;
 
-BlogList = React.createClass({
+VideoList = React.createClass({
   render() {
-    const blogItems = _.filter(this.props.posts, (post) => {
+    const videoItems = _.filter(this.props.posts, (post) => {
       return post.title.toLowerCase().indexOf(this.props.inputText.toLowerCase()) > -1;
     })
     .map((post) => {
       return (
-        <Link to={`/blog/${post.id}`} className="item" key={post.id}>
+        <Link to={`/v/${post.id}`} className="item" key={post.id}>
           <div className="left">{post.id}</div>
           <div className="right">
             <div className="title">{post.title}</div>
@@ -20,7 +20,7 @@ BlogList = React.createClass({
 
     return (
       <div className={this.props.className}>
-        { blogItems }
+        { videoItems }
       </div>
     );
   }

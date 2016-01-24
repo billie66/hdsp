@@ -28,7 +28,7 @@ App = React.createClass({
 
   _getAppBar() {
     let title = this.context.router.isActive('/home') ? 'Home' :
-      this.context.router.isActive('/blogs') ? 'Blogs' :
+      this.context.router.isActive('/video') ? 'Video' :
       this.context.router.isActive('/about') ? 'About' : '';
 
     return (

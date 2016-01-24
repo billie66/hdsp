@@ -1,5 +1,5 @@
 const { Styles, CircularProgress } = mui;
-Blog = React.createClass({
+Video = React.createClass({
   getInitialState(){
     return {
       posts: [],
@@ -9,7 +9,7 @@ Blog = React.createClass({
   componentWillMount() {
     let that = this;
 
-    Meteor.call('/blog/getPost', "posts", function(err, res){
+    Meteor.call('/video/getPost', "posts", function(err, res){
       if (err) {
         console.log(`This file does not exist!`);
         return;
@@ -20,7 +20,7 @@ Blog = React.createClass({
 
   componentDidMount() {
     $(".loader").delay(1000).fadeOut('slow', function() {
-      $(".blog-list").fadeIn('slow');
+      $(".video-list").fadeIn('slow');
     });
   },
 
@@ -53,7 +53,7 @@ Blog = React.createClass({
     return (
       <div style={styles.root}>
         <div style={styles.hero}>
-          <div style={styles.title}>BLOG</div>
+          <div style={styles.title}>VIDEO</div>
           <SearchBar
             inputText={this.state.inputText}
             onUserInput={this._handleInputChange} />
@@ -62,10 +62,10 @@ Blog = React.createClass({
           mode="indeterminate"
           className="loader"
           style={styles.circle} />
-        <BlogList
+        <VideoList
           inputText={this.state.inputText}
           posts={this.state.posts.reverse()}
-          className="blog-list container" />
+          className="video-list container" />
       </div>
     );
   },

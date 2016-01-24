@@ -3,7 +3,7 @@ const { Tabs, Tab, IconButton } = mui;
 NavBarTabs = React.createClass({
   getInitialState() {
     return {
-      tabIndex: '/home'
+      tabIndex: ''
     };
   },
 
@@ -30,8 +30,8 @@ NavBarTabs = React.createClass({
 
   _getSelectedIndex() {
     return this.context.router.isActive('/home') ? '/home' :
-      this.context.router.isActive('/blog') ? '/blog' :
-      this.context.router.isActive('/about') ? '/about' : '/home';
+      this.context.router.isActive('/video') ? '/video' :
+      this.context.router.isActive('/about') ? '/about' : '';
   },
 
   render() {
@@ -65,8 +65,8 @@ NavBarTabs = React.createClass({
             value='/home'
             style={styles.tab} />
           <Tab
-            label='Blog'
-            value='/blog'
+            label='Video'
+            value='/video'
             style={styles.tab} />
           <Tab
             label='About'
