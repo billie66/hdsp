@@ -28,7 +28,6 @@ Video = React.createClass({
     let styles = {
       root: {
         paddingBottom: '64px',
-        backgroundColor: '#fafafa',
         minHeight: '50em'
       },
       hero: {
