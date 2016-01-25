@@ -20,7 +20,7 @@ About = React.createClass({
             </a>
           </div>
           <div className="paper">
-            <img src="images/peter.png" />
+            <img src="/images/peter.png" />
           </div>
           <div className="info">
             <h3>联系方式</h3>

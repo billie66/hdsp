@@ -3,7 +3,7 @@ PageNotFound = React.createClass({
     return (
       <div className='page-not-found'>
         <div className='cartoon'>
-          <img src='images/peter.jpeg' />
+          <img src='/images/peter.jpeg' />
           <div className='tip'>Page Not Found</div>
         </div>
       </div>
