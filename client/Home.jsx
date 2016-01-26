@@ -7,12 +7,9 @@ Home = React.createClass({
         <div className="overlay">
           <div className="content">
             <h1 className="title">
-              hi! i&#39;m
-              <span className="name">happypeter</span>
+              <span>欢迎来到</span>
+              <span className="name">好多视频网</span>
             </h1>
-            <h2 className="subtitle">
-              a web developer
-            </h2>
           </div>
         </div>
       </div>

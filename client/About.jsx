@@ -15,9 +15,6 @@ About = React.createClass({
             <div className="desc">
               web 开发者，在线教育狂热分子，很多朋友叫他“录视频的那个 Peter ”，自封“视频死磕侠” 。
             </div>
-            <a href="https://github.com/happypeter">
-              <RaisedButton label="下载简历" secondary={true} labelStyle={styles.label}/>
-            </a>
           </div>
           <div className="paper">
             <img src="/images/peter.png" />
